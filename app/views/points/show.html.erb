@@ -1,0 +1,28 @@
+<h1>Points#show</h1>
+
+<div data-controller="google-map--show">
+  <div data-google-map--show-target="map" data-json="<%= @point_json %>" style="height:30vh;max-width:400px;"></div>
+</div>
+<br>
+<table border="1">
+  <tbody>
+    <tr>
+      <th>ポイント</th>
+      <td><%= @point.name %></td>
+    </tr>
+    <tr>
+      <th>住所</th>
+      <td><%= @point.address %></td>
+    </tr>
+    <tr>
+      <th>緯度</th>
+      <td><%= @point.latitude %></td>
+    </tr>
+    <tr>
+      <th>軽度</th>
+      <td><%= @point.longitude %></td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to "back", root_url, data: { turbolinks: false } %>

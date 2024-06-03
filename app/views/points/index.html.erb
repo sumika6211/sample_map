@@ -1,0 +1,8 @@
+<h1>Points#index</h1>
+
+<div data-controller="google-map--index">
+  <div data-google-map--index-target="map" data-json="<%= @points_json %>" style="height:50vh;max-width:800px;"></div>
+</div>
+<br>
+
+<%= render "points/form", point: @point %>

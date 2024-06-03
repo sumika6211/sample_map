@@ -1,0 +1,33 @@
+<div data-controller="google-map--form">
+  <%= form_with(model: point, url: root_path, local: true ) do |f| %>
+    <ul>
+      <% f.object.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+    
+    キーワードで探す:
+    <%= f.search_field :keyword, data: { google_map__form_target: 'keyword' } %><br>
+
+    <%= f.number_field :latitude, data: { google_map__form_target: 'latitude' }, tabindex: -1, readonly: true, class: "looks_disable" %>
+    <%= f.number_field :longitude, data: { google_map__form_target: 'longitude' }, tabindex: -1, readonly: true, class: "looks_disable"%><br>
+
+    <div data-google-map--form-target="map" style="height:20vh;max-width:300px;"></div>
+
+    name:
+    <%= f.text_field :name, data: { google_map__form_target: 'name' } %><br>
+
+    address:
+    <%= f.text_field :address, list: 'address_list', data: { google_map__form_target: 'address' } %><br>
+    <datalist id="address_list" data-google-map--form-target="addressList" ></datalist>
+
+    <%= f.submit "場所を登録する" %>
+  <% end %>
+</div>
+
+<style>
+  .looks_disable {
+    background-color: #eee;
+    pointer-events: none;
+  }
+</style>
