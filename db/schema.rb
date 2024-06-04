@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2024_02_28_120842) do
-
   create_table "points", force: :cascade do |t|
     t.string "name"
     t.float "latitude"
@@ -20,5 +19,4 @@ ActiveRecord::Schema.define(version: 2024_02_28_120842) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
-
 end
